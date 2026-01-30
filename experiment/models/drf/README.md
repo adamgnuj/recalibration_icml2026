@@ -1,0 +1,1 @@
+This folder contatins the code to run the model [Distributional Random Forests (Cevid et al., 2020)](https://github.com/lorismichel/drf).
