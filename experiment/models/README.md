@@ -3,7 +3,7 @@
 Find the implementations of the base models (i.e., models to be recalibrated) in the subdirectories of this directory.
 
 In each subdirectory there is a file `run_model.py` which
-executes model fitting and inference using the given model.
+executes model fitting and inference using the given model and given dataset.
 The results are exported to `<model name>/exported_predictions/`.
 
 The file [run.py](run.py) in this directory runs
