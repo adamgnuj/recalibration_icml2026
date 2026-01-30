@@ -1,0 +1,2 @@
+- Use eg. `export GPU_DEVICE=1` to set the GPU device.
+- Also execute `export LD_LIBRARY_PATH=""` to properly load the `CUDA.jl` package.
