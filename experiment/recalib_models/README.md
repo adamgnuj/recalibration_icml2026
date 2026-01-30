@@ -14,9 +14,4 @@ The file [run.py](run.py) in this directory runs
 a given recalibration model on a given base model, on all the datasets defined under [../data/](../data/).
 
 
-## Installations
-Please run
-`git clone https://github.com/Srceh/DistCal.git GPBETA/
-`
-to have the neccessary codebase for running 
-the code of [Distribution Calibration for Regression (ICML'2019)](https://github.com/Srceh/DistCal)
+Note that we use the codebase of [Distribution Calibration for Regression (ICML'2019)](https://github.com/Srceh/DistCal) to perform the recalibration algorithm GPBETA.
