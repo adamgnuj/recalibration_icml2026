@@ -11,7 +11,9 @@ Modify line `45` of [run.py](run.py)
 ```
 env["JULIA_PROJECT"] = "<absolute path to julia project file>"
 ```
-to execute the scripts with the appropriate `julia` environment.
+to execute the scripts with the appropriate julia environment.
+For example: `env["JULIA_PROJECT"] = "/home/<user>/.../recalibration_icml2025"`
+
 
 The file [experiment_walker.jl](experiment_walker.jl)
 is just a utility tool, to iterate over all exported dataset splits and
