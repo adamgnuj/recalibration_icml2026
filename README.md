@@ -18,6 +18,7 @@ recalbration_icml2026
 ├── README.md
 ├── Project.toml
 ├── Manifest.toml
+├── conda_environment.yml
 ```
 
 The directory [Calibration](Calibration/) contains an
@@ -30,9 +31,10 @@ code for
 3. running re-calibration algorithms ([recalib_models](experiment/recalib_models/)), 
 4. and evaluate the results ([eval](experiment/eval/)).
 
-To reproduce our benchmark results, begin by installing the Julia environment (see instructions below). Next, follow the steps in the individual README files, following the order presented in the list above.
+To reproduce our benchmark results, begin by installing the required environments (see instructions below). Next, follow the steps in the individual README files, following the links presented in the numbered list above.
 
-## Julia environment installation
+## Environment installations
+### Julia environment
 1. Install the Julia version `1.11.5` from [julialang.org](https://julialang.org/downloads/).
 2. Istantiate the required julia environment via
     - starting a julia REPL in this directory (`recalibration_icml2026`), 
@@ -42,3 +44,10 @@ To reproduce our benchmark results, begin by installing the Julia environment (s
         Pkg.activate(".")  
         Pkg.instantiate()
         ```
+
+### Conda environment 
+To create and activate the required conda environment, execute the following lines:
+```
+conda env create -f conda_environment.yml
+conda activate run_exp
+```
