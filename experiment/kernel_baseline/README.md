@@ -10,7 +10,7 @@ Additionally, because kernel methods sometimes struggle to capture the mapping $
 ### Evaluation
 We report the relative CRPS error of the models, normalized as a ratio to what the kernelized prediction achieves.
 
-Additionally, we report the ratio of splits where the SKCE test rejected the hypothesis of auto calibration. The PIT calibration hypothesis test's results can also be found in a simmilar presentation.
+Additionally, we report the ratio of splits where the SKCE test rejected the hypothesis of auto calibration. The PIT calibration hypothesis test's results can also be found in a similar presentation.
 
 ### Results
 ![](figs/kernel_vs_ckme_recalibration.svg)
