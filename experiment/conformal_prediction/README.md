@@ -8,13 +8,16 @@ $\psi(x) = |x - \frac{1}{2}|$ of
 
 ### Evaluation
 We compare the CP intervals $[a,b] \subset \mathbb{R}$ at a fixed coverage level ($\alpha = 0.05$) against the interval
+
 $$
 [\tilde a, \tilde b] := [q_{\alpha /2}, q_{1 - \alpha /2}] \subset \mathbb{R}
 $$ 
+
 derived from the predictive quantiles $q$ of the recalibrated model.
 
 We plot the marginal coverage level on the test set,
 and the relative average width of the predicted intervals:
+
 $$
 \frac{\tilde b - \tilde a}{b-a}
 $$
