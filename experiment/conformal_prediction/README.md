@@ -27,8 +27,10 @@ It is easy to see that $Z$ should ideally be independent of the prediction and t
 
 Since distance correlation is a normalized dependence measure, characterizing independence (i.e., $\mathrm{dCor} = 0 \iff$ the inputs are independent, and $0 \leq \mathrm{dCor} \leq 1$) it is a suitable metric to assess the amount of dependence between predictive intevals and the PIT transform.
 
+### Conclusions
+We can see that the proposed method's marginal coverage and interval lengths are comparable to those of standard CP, while the dependece between predicted intervals and the PIT transform of the observations tends to be smaller, i.e., the remaining modeling error is more evenly distributed.
 
-## results
+### Results
 ![](results/figs/cp_comparison_drf.svg)
 
 ![](results/figs/cp_comparison_bnn.svg)
@@ -36,3 +38,5 @@ Since distance correlation is a normalized dependence measure, characterizing in
 ![](results/figs/cp_comparison_mdn.svg)
 
 ![](results/figs/cp_comparison_gdn.svg)
+
+
