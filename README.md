@@ -1,6 +1,14 @@
 # recalibration_icml2026
 Experiment code for the ICML'2026 submission _Nonparametric Distribution Regression Re-calibration_.
 
+---
+__Please find additional experiment results at:__
+- [Conformal Prediction](experiment/conformal_prediction/)
+- [Energy Distance Kernel ablation study](experiment/EDK_ablation_study/)
+- [Wall-clock time: ours vs PIT recalibration](experiment/wall_clock_time/)
+- [Kernel method as baseline](experiment/kernel_baseline/)
+
+---
 
 The structure of this repository is the following:
 ```
@@ -15,6 +23,10 @@ recalbration_icml2026
 │   ├── recalib_models
 │   ├── eval
 │   ├── logs
+│   ├── conformal_prediction
+│   ├── EDK_ablation_study
+│   ├── wall_clock_time
+│   ├── kernel_baseline
 ├── README.md
 ├── Project.toml
 ├── Manifest.toml
