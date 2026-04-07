@@ -22,11 +22,10 @@ $$
 In order to highlight that standard CP procedures, such as Chernozhukov et al.'s (2021) only target marginal alignment of model errors, and therefore the "_error cancellation_" (i.e., over and underconfident predictions cancelling out on average) effect can occur, we plot the distance correlation $\mathrm{dCor}$
 ([Székely et al., 2008](https://arxiv.org/abs/0803.4101)) of the predicted interval (as a point in $\mathbb{R}^2$) and the pit transform of the prediction $Z = F(Y)$.
 
-WIP...
 
-Since our recalibration method targets auto calibration ($Q = \mathbb{P}_{Y|Q}$), it is easy to see that ideally $Z$ should be independent of the prediction and therefore from the interval $[a,b]$.
+It is easy to see that $Z$ should ideally be independent of the prediction and therefore from the interval $[a,b]$. This independence condition means that the errors are evenly distributed w.r.t. the predictions and there are no systematically under / over confident predictions.
 
-
+Since distance correlation is a normalized dependence measure, characterizing independence (i.e., $\mathrm{dCor} = 0 \iff$ the inputs are independent, and $0 \leq \mathrm{dCor} \leq 1$) it is a suitable metric to assess the amount of dependence between predictive intevals and the PIT transform.
 
 
 ## results
