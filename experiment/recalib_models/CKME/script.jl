@@ -14,7 +14,7 @@ end
 @info "gpu:" Base.active_project() GPU_DEVICE ARGS
 
 
-begin
+_wall_clock_time = @elapsed begin
     args_parsed = NamedTuple{(
         :X_train, :X_validation, :X_test, 
         :y_train, :y_validation, 
@@ -75,3 +75,4 @@ begin
 
     Calibration.run_recalibration(conf)
 end
+@info "WALL_CLOCK_TIME: $_wall_clock_time"

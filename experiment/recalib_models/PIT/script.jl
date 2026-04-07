@@ -51,7 +51,7 @@ end
 
 
 
-begin
+_wall_clock_time = @elapsed begin
     args_parsed = NamedTuple{(
         :X_train, :X_validation, :X_test, 
         :y_train, :y_validation, 
@@ -114,3 +114,4 @@ begin
         error("Not implemented PREDS_FORMAT: ", PREDS_FORMAT)
     end
 end
+@info "WALL_CLOCK_TIME: $_wall_clock_time"
