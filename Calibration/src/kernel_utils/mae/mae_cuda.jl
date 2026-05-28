@@ -119,6 +119,58 @@ function kernel_mae!(M::CuDeviceMatrix{Float32, 1}, M_cumsum::CuDeviceMatrix{Flo
 end
 
 
+function _naive_kernel_mae!(M::CuDeviceMatrix{Float32, 1}, out::CuDeviceMatrix{Float32, 1})    
+    m, n = size(M)
+    T = n*(n-1)÷2
+    l = (blockIdx().x - 1) * blockDim().x + threadIdx().x #linear index [1, ..., T] on lower triangular of the kmtx
+    
+    if l <= T # offdiagonal entries
+        i,j = _reconstruct_indices(l)
+        S = zero(eltype(M))
+        for p = 1:m
+            for q = 1:m
+                S += abs(M[p,i] - M[q, j])
+            end
+        end
+        # S = _merge_bin_lin_cums_sae(M, M_cumsum, i, j)
+        S /= m^2
+        out[i,j] = S
+        out[j,i] = S
+        return
+    elseif l <= T + n #diagonal entries at the end
+        i = l - T
+        j = i
+        S = zero(eltype(M))
+        for p = 1:m
+            for q = 1:m
+                S += abs(M[p,i] - M[q, j])
+            end
+        end
+        out[i,i] = S / m^2
+        return
+    else
+        return
+    end
+end
+
+function _naive_pairwise_mae(M::AbstractArray)
+    n = size(M, 2)
+    
+    M = M .|> Float32 |> cu
+    # sort!(M, dims = 1)
+    # M_cumsum = cumsum(M, dims = 1)
+    out = CUDA.zeros(n,n)
+    
+    T = n*(n-1)÷2
+    steps = T + n
+    
+    ts = min(256, n)
+    bs = cld(steps, ts)
+
+    CUDA.@sync @cuda threads=ts blocks=bs _naive_kernel_mae!(M, out)
+    out
+end
+
 """
 ```
 pairwise_mae(M::AbstractArray) -> S
